@@ -6,8 +6,9 @@ RSpec.describe "Topページへのアクセス", type: :request do
     it '正常なレスポンスが返る' do
       expect(response).to have_http_status 200
     end
-    it "'Top | Qitta App'というタイトルを表示" do
-      expect(response.body).to_not include 'Top | Qitta to do'
+    it "'Qitta_app'というタイトルを表示" do
+      expect(response.body).to_not include ' | Qitta_app'
+      expect(response.body).to include 'Qitta_app'
     end
   end
 end
@@ -18,8 +19,8 @@ RSpec.describe "Aboutページへのアクセス", type: :request do
     it '正常なレスポンスが返る' do
       expect(response).to have_http_status 200
     end
-    it "'About | Qitta App'というタイトルを表示" do
-      expect(response.body).to_not include 'About | Qitta to do'
+    it "'About | Qitta_app'というタイトルを表示" do
+      expect(response.body).to_not include 'About | Qitta_app'
     end
   end
 end
@@ -30,8 +31,8 @@ RSpec.describe "Helpページへのアクセス", type: :request do
     it '正常なレスポンスが返る' do
       expect(response).to have_http_status 200
     end
-    it "'Help | Qitta App'というタイトルを表示" do
-      expect(response.body).to_not include 'Help | Qitta to do'
+    it "'Help | Qitta_app'というタイトルを表示" do
+      expect(response.body).to_not include 'Help | Qitta_app'
     end
   end
 end
